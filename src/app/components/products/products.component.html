@@ -1,0 +1,57 @@
+<h1>les Produits</h1>
+<!-- <div class="products">
+    <div class="card" style="width: 18rem;">
+        <img src="../../../assets/articles/article_1.png" class="card-img-top" alt="...">
+        <div class="card-body bg-dark text-center">
+            <div class="tittle">
+                <h1>Sweat "why so serious"</h1>
+            </div>
+            <div class="price">
+                35$
+            </div>
+        
+        </div>
+        <button>Ajouter au panier</button>
+      </div>
+</div> -->
+<!-- <div class="products"> -->
+    <div class="resultats mt-5 d-flex justify-content-between">
+        <p>
+            Résultats: <span class="mx-2">{{products.length}}</span>
+        </p>
+        <p>
+            Trier par <i class="fa-solid fa-chevron-down"></i>
+        </p>
+    </div>
+    
+    <div class="row">
+        <ng-container *ngfor="let productItem of products | pagination:{itemsPerPage:9, currentPage:p}">
+            <div class="col-md-4">
+                <div class="card my-3" >
+                    <img routerLink="product/{{productItem.id}}"
+                    [src]="productItem.imageUrl" 
+                    class="card-img-top" 
+                    alt="card image cap"/>
+                    <div class="py-3 bg-dark text-center">
+                       <h5 class="card-title">{{productItem.nom_A | uppercase}}</h5>
+                       <h5 class="card-price">{{productItem.Prix | currency:'EUR'}}</h5>
+                    
+                    </div>
+                    <app-button text="ajouter au panier"></app-button>
+                  </div>
+            </div>
+    
+        </ng-container>
+        <div class="paginate">
+            <pagination-controls class="text-center" previouslabel="Précedent" nextlabel="Suivant" (pageChange)="p = $event" >
+
+            </pagination-controls>
+        </div>
+       
+    
+    </div>
+
+<!-- </div> -->
+
+
+

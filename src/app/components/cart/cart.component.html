@@ -1,0 +1,75 @@
+<!-- <div class="container">
+    <div class="float-end pt-3">
+        <i class="fa-solid fa-2x fa-cart-shopping"></i>
+    </div>
+
+</div> -->
+
+<ng-container *ngIf="products.length != 0">
+    <div class="container container-largeur">
+        <div class="row">
+            <div class="d-flex justify-content-between">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a routerLink="/e-shop">eshop</a>
+                        </li>
+                        <li
+                          class="breadcrumb-item active"
+                          aria-current="page"
+                          routerLink="/cart"
+                        >
+
+                        Panier
+
+                        </li>
+                    </ol>
+
+                </nav>
+                <div class="cart">
+                    <i routerLink="/cart" class="fa-solid fa-2x fa-cart-shopping"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="recap">
+            <p>Récapitulatif du panier</p>
+        </div>
+        <ng-container *ngFor="let productItem of products">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="product d-flex align-items-center">
+                    <img width="30%" [src]="productItem.imageUrl" alt="">
+                    <div class="mx-4">
+                        <h5>{{ productItem.nom_A}}</h5>
+                        <span>Numéro de produit x000 {{ productItem.id}}</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <p>{{ productItem.Prix | currency: "EUR"}}</p>
+
+                </div>
+                <div class="qte bg-secondary">
+                    <i class="fa-solid fa-minus mx-4"></i><span class="fs-4">1</span>
+                    <i class="fa-regular fa-2x fa-plus mx-4"></i>
+                </div>
+                <div class="delete">
+                    <i (click)="removeItem(productItem)" class="fa-solid fa-2x fa-xmark"></i>
+                </div>
+            </div>
+
+        </ng-container>
+        <div class="sous-total container-largeur">
+            
+        </div>
+    </div>
+
+</ng-container>
+<br><br>
+
+<ng-container *ngIf="products.length == 0">
+    <h1 class="text-center">Ton panier est vide</h1>
+    <div class="container-largeur">
+        <app-button text="Faire des Achats" routerLink="/e-shop"></app-button>
+    </div>
+
+</ng-container>

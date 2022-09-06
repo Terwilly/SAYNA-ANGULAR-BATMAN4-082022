@@ -1,0 +1,14 @@
+.scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  right: 50px;
+  top: 180px;
+}
+.scroll img {
+  margin-top: 20px;
+}
+.scroll .social {
+  width: 30%;
+}/*# sourceMappingURL=scroll-bar.component.css.map */
