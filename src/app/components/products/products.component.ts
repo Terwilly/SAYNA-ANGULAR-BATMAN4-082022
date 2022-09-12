@@ -6,20 +6,24 @@ import { ApiProductsService } from 'src/app/services/api-products.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  p:number =1;
-  public products:any;
+  p: number = 1;
+  public products: any;
 
-  constructor(private api:ApiProductsService,private cartService: CartService,private router:Router) { }
+  constructor(
+    private api: ApiProductsService,
+    private cartService: CartService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.api.getProducts().subscribe((res)=>{
+    this.api.getProducts().subscribe((res) => {
       this.products = res;
       console.log(this.products);
       this.products.forEach((a: any) => {
-        Object.assign(a, { quantity: 1, total: a.Prix});
+        Object.assign(a, { quantity: 1, total: a.Prix });
       });
     });
   }
@@ -28,5 +32,4 @@ export class ProductsComponent implements OnInit {
     this.cartService.addToCart(productItem);
     this.router.navigateByUrl('cart');
   }
-
 }
