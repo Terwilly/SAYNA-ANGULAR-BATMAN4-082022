@@ -25,7 +25,7 @@
     </div>
     
     <div class="row">
-        <ng-container *ngfor="let productItem of products | pagination:{itemsPerPage:9, currentPage:p}">
+        <ng-container *ngfor="let productItem of products">
             <div class="col-md-4">
                 <div class="card my-3" >
                     <img routerLink="product/{{productItem.id}}"

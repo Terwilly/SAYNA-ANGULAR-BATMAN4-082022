@@ -1,1 +1,64 @@
-<p>signup works!</p>
+<section id="hero">
+    <div class="hero-image">
+        <div class="container">
+            <h1 class="hero-titlle text-uppercase text-white"></h1>
+        </div>
+    </div>
+
+</section>
+
+<section class="inscription">
+    <div class="container formulaire">
+        <div class="head text-center">
+            <h2>inscription</h2>
+            <p>
+                Vous avez déjà un compte?
+                <a routerLink="/connection">Connectez-vous ici</a>
+            </p>
+        </div>
+        <div class="form-body">
+            <form class="form">
+                <div class="mb-3">
+                    <label for="Nom" class="form-label">Nom</label>
+                    <input 
+                    type="text"
+                    class="form-control"
+                    id="nom"
+                    aria-describedby="emailHelp"
+                    placeholder="nom">
+                </div>
+                <div class="mb-3">
+                    <label for="prenom" class="form-label">Prénom</label>
+                    <input 
+                    type="text"
+                    class="form-control"
+                    id="prenom"
+                    aria-describedby="emailHelp"
+                    placeholder="prénom">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Identifiant</label>
+                    <input 
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input 
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="mot de passe">
+                </div>
+
+                <div class="d-grid mx-auto">
+                    <button type="submit">VALIDER</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>

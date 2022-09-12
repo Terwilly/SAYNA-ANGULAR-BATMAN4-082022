@@ -59,9 +59,22 @@
 
         </ng-container>
         <div class="sous-total container-largeur">
+            <h4 class="float-end">
+                <strong>Sous Total : {{ grandTotal | currency: "EUR"}}</strong>
+
+            </h4>
             
         </div>
     </div>
+    <section class="container container-largeur d-flex mx-auto my-5">
+        <app-button class="mx-2" text="Continuer mes achats" routerLink="/e-shop">
+
+        </app-button>
+        <app-button class="mx-2" text="Passer commande" routerLink="commande">
+
+        </app-button>
+
+    </section>
 
 </ng-container>
 <br><br>

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.cartService.getProducts().subscribe((res) => {
       this.products = res;
       this.grandTotal = +this.cartService.getTotalPrice();
@@ -23,6 +23,6 @@ export class CartComponent implements OnInit {
   // supprimer un produit //
   removeItem(productItem: any) {
     if(confirm('Es tu sure de supprimer ce produits '))
-      this.cartService.removeCartItem(productItem);
+      this.cartService.removeCartItem(productItem);///
   }
-}
+ }

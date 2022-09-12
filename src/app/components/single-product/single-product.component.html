@@ -66,8 +66,8 @@
         </div>
         <div class="row">
           <div class="d-flex align-items-center pb-5">
-            <app-button text="Ajouter au panier"></app-button>
-            <div class="mx-3">
+            <app-button (click)="addToCart(product)" text="Ajouter au panier"></app-button>
+            <div class="mx-3"> 
               <i class="fa-regular border fa-2x fa-heart"></i>
             </div>
           </div>
